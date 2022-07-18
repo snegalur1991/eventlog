@@ -80,16 +80,16 @@ WSGI_APPLICATION = 'eventlog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'eventlogdb',
-#        'USER': 'dba',
-#        'PASSWORD': 'dba@123',
-#        'HOST': 'localhost',
-#        'PORT': '3306',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'eventlogdb',
+        'USER': 'dba',
+        'PASSWORD': 'dba@123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 
 
 # Password validation
@@ -163,3 +163,22 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'negalursantu@gmail.com'
 EMAIL_HOST_PASSWORD = 'Qwiop@1290'
 EMAIL_USE_SSL = False
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/opt/appdata/app-project/eventlog/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
