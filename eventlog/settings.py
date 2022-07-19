@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'eventlogdb',
         'USER': 'dba',
         'PASSWORD': 'dba@123',
-        'HOST': 'localhost',
+        'HOST': 'mysqldb',
         'PORT': '3306',
     }
 }
