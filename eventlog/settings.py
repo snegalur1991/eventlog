@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ga&(d3u!oo336!i-rtio*4s4qs%9o@6466h95)_8_35vp3e&s7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["10.2.5.9"]
+ALLOWED_HOSTS = [config('IP')]
 
 
 # Application definition
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'eventlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'eventlogdb',
-        'USER': 'dba',
-        'PASSWORD': 'dba@123',
-        'HOST': 'm1',
-        'PORT': '3306',
+        'NAME': config('DBNAME'),
+        'USER': config('DBUSER'),
+        'PASSWORD': config('DBPASSWD'),
+        'HOST': config('DBHOST'),
+        'PORT': config('DBPORT'),
     }
 }
 
